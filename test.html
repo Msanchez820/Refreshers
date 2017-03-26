@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+<meta charset="UTF-8">
+<html>
+<!--headings go from 1 to 6-->
+	<head>
+		<title>
+		First Page
+		</title>
+	<script>
+		function allowDrop(ev) 
+		{
+    			ev.preventDefault();
+		}
+
+		function drag(ev) 
+		{
+		    ev.dataTransfer.setData("text", ev.target.id);
+		}
+
+		function drop(ev) 
+		{
+		    ev.preventDefault();
+		    var data = ev.dataTransfer.getData("text");
+		    ev.target.appendChild(document.getElementById(data));
+		}
+	</script>
+	</head>
+	<body bgcolor="#000099">
+		<header>
+			<font color="#FFFFFF">
+			<h1 align="center">Test Page</h1>
+			</font>
+		</header>
+		<nav>
+			<ul>
+				<li><a href="https://www.google.com">Google</a></li>
+				<li><a href="https://www.bing.com">Bing</a></li>
+				<li><a href="https://www.youtube.com/">YouTube</a></li>
+			</ul>
+		</nav>
+		<!--frames no longer supported-->
+		<hr color="green"/>
+			<article style="background-color:yellow; color:red; padding:1px;" ondrop="drop(event)" ondragover="allowDrop(event)">
+				<section>
+				<!--src works in audio without source tag too-->
+				<!--controls lets user have player controls-->
+				<!--don't forget autoplay-->
+				<form><input type="search" name="searchitem" placeholder="Search"/><br/>
+				<input id="car" type="text" list="colors" /><br/>
+					<datalist id="colors">
+					   <option value="Barry Allen">
+					   <option value="Wally West">
+					   <option value="Bart Allen">
+					</datalist>
+				<input id="email" name="email" type="email" placeholder="example@example.com" /><br />
+				<input id="url" name="url" type="url" placeholder="example.com" /><br />
+				<input id="tel" name="tel" type="tel" placeholder="555.555.5555" /><br />
+				</form>
+				<video controls width="300px" height="200px">
+					<source src="C:\Users\Mario\Downloads\Fountain Siege.mp4" type="video/mp4">
+				</video>
+				<br/>
+				<h3>99 Problems<br/></h3>
+				<audio controls loop>
+					<source src="C:\Users\Mario\Downloads\VAN-99P.mp3" type="audio/mpeg">
+				</audio>
+				<h1>THE FLASH</h1>
+				<a href="http://porojj.deviantart.com/art/The-Flash-431757110" target="_blank">
+					<img id="image" src="http://pre14.deviantart.net/096c/th/pre/i/2014/035/f/5/the_flash_by_porojj-d7521x2.jpg" height="250px" width="175px" border="5px" alt="Image of the Flash" draggable="true" ondragstart="drag(event)"/>
+					<p>Random dudes deviant art page</p>
+				</a>
+				</section>
+				<form action="https://www.google.com/" method="GET" autocomplete="off">
+				<!--GET shows stuff POST still not quite sure-->
+				<!--autofocus-->
+					<label>Username:</label>
+					<input id="user "type="text" name="username" placeholder="Username" required/><br/>
+					<label>Password:</label>
+					<input type="password" name="password" placeholder="Password" required/><br/>
+					<input type="radio" name="gender" value="male" /> Male <br />
+					<input type="radio" name="gender" value="female" /> Female <br />
+					<input type="checkbox" name="gender2" value="1" /> Male <br />
+					<input type="checkbox" name="gender2" value="2" /> Female <br />
+					<input type="submit" vaue="Submit"/> <br/>
+				</form>
+				<ol>
+					<li><p>This is regular text </p></li>
+					<li><p><b> bold text </b></p></li>
+					<li><p><big> big text </big></p></li>
+					<li><p><i> italic text </i></p></li>
+				</ol>
+				<svg width="200" height="200">
+					<circle cx="80" cy="80" r="50" fill="green">
+					<animate attributeName="x" from="0" to="200" dur="3s" fill="freeze" repeatCount="indefinite"/> 
+					</circle>
+				</svg>
+				<aside align="right">
+					<p>I wonder how this looks</p>
+				</aside>
+			</article>
+		<font color="#FFFFFF">
+		<ul>
+			<li><p><small> small text </small></p></li>
+			<li><p><strong> strong text </strong></p></li>
+			<li><p>Test<sub> subscripted text </sub></p></li>
+		</ul>
+		</font>
+		<progress min="0" max="100" value="35"></progess>
+		<footer>
+		<table border="2" align="center">
+			<tr>
+				<td bgcolor="red"><span style="color:orange">Test</span><sup> superscripted text </sup></td>
+				<td bgcolor="yellow"><ins> inserted text </ins></td>
+				<td bgcolor="blue"><del> deleted text </del></td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center"><font color="#FFFFFF">Test</font></td>
+			</tr>
+		</table>
+		</footer>
+	</body>
+</html>
