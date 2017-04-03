@@ -27,9 +27,12 @@ void LinkedList::Add(Task * t)
 		{
 			if ((*t) < *(temp->mTask))
 			{
-				temp2 = temp;
-				temp = new node(t);
-				temp->next = temp2;
+				node * newNode = new node(t);
+				if (this->head == temp)
+					head = newNode;
+				if (temp2)
+					temp2->next = newNode;
+				newNode->next = temp;
 				this->listLength++;
 				break;
 			}
@@ -41,6 +44,7 @@ void LinkedList::Add(Task * t)
 			}
 			else
 			{
+				temp2 = temp;
 				temp = temp->next;
 			}
 		}
